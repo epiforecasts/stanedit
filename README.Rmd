@@ -21,9 +21,9 @@ First we load a stan model and prepares it for editing using the functionality i
 
 ```{r}
 library("stanedit")
-#' model_file_name <- system.file(package = "stanedit", "regression.stan")
-#' reg <- stanedit(filename = model_file_name)
-#' reg
+model_file_name <- system.file(package = "stanedit", "regression.stan")
+reg <- stanedit(filename = model_file_name)
+reg
 ```
 
 Let's say we want to add standard normal priors for alpha and beta.
