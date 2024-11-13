@@ -10,6 +10,11 @@ Development of this package was inspired by the `<bi_model>` class in the [rbi](
 
 ## Installation
 
+The stable version of the package can be installed using
+```{r eval=FALSE}
+install.packages("stanedit", repos = "https://epiforecasts.r-universe.dev/")
+```
+
 The development version can be installed using `pak`
 ```{r eval=FALSE}
 pak::pak("epiforecasts/stanedit")
