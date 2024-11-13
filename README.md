@@ -10,6 +10,12 @@ the [rbi](https://github.com/sbfnk/rbi) package.
 
 ## Installation
 
+The stable version of the package can be installed using
+
+``` r
+install.packages("stanedit", repos = "https://epiforecasts.r-universe.dev/")
+```
+
 The development version can be installed using `pak`
 
 ``` r
