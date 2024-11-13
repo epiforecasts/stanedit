@@ -50,8 +50,8 @@ insert_lines(reg,
   lines = c(
     "alpha ~ std_normal();",
     "beta ~ std_normal();"
-  ), 
-  after = 12
+  ),
+  at_end_of = "model"
 )
 ```
 
