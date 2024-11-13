@@ -18,7 +18,7 @@
 #' @examples
 #' model_file_name <- system.file(package = "stanedit", "regression.stan")
 #' reg <- stanedit(filename = model_file_name)
-#' insert_lines(reg, lines = "alpha ~ std_normal()", after = 12)
+#' insert_lines(reg, lines = "alpha ~ std_normal();", after = 12)
 #' @export
 insert_lines <- function(x, lines, before, after, at_beginning_of, at_end_of) {
   assert_class(x, "stanedit")

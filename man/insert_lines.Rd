@@ -32,7 +32,7 @@ beginning/end of the block, respectively.
 \examples{
 model_file_name <- system.file(package = "stanedit", "regression.stan")
 reg <- stanedit(filename = model_file_name)
-insert_lines(reg, lines = "alpha ~ std_normal()", after = 12)
+insert_lines(reg, lines = "alpha ~ std_normal();", after = 12)
 }
 \seealso{
 \code{\link{stanedit}}
