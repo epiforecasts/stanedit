@@ -6,6 +6,8 @@ output: github_document
 
 This package facilitates editing of stan model code using R. This includes adding/removing blocks, extracting variable names, and inserting/removing lines.
 
+Development of this package was inspired by the `<bi_model>` class in the [rbi](https://github.com/sbfnk/rbi) package.
+
 ## Installation
 
 The development version can be installed using `pak`
