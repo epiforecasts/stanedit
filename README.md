@@ -24,7 +24,7 @@ pak::pak("epiforecasts/stanedit")
 
 ## Example
 
-First we load a stan model and prepares it for editing using the
+First we load a stan model and prepare it for editing using the
 functionality in this package.
 
 ``` r
