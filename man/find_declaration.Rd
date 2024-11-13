@@ -10,9 +10,6 @@ find_declaration(x, name)
 \item{x}{a \code{\link{stanedit}} object}
 
 \item{name}{of the block to find}
-
-\item{inner}{only return the inner part of the block (not the block
-definition)}
 }
 \value{
 an integer, the line numbes where the variable is declared; an empty

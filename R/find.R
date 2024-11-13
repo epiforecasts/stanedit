@@ -54,8 +54,6 @@ find_block <- function(x, name, inner = FALSE) {
 #' @keywords internal
 #' @param x a \code{\link{stanedit}} object
 #' @param name of the block to find
-#' @param inner only return the inner part of the block (not the block
-#'   definition)
 #' @importFrom checkmate assert_class
 #' @export
 #' @examples

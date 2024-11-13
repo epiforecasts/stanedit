@@ -4,15 +4,12 @@
 \alias{write_model}
 \title{Writes a bi model to a file.}
 \usage{
-write_model(x, filename, update.name = TRUE)
+write_model(x, filename)
 }
 \arguments{
-\item{x}{a \code{\link{stanedit}} object, or a \code{\link{libbi}} object
-containing a model}
+\item{x}{a \code{\link{stanedit}} object}
 
 \item{filename}{name of the file to be written}
-
-\item{update.name}{whether to update the model name with the file name}
 }
 \value{
 the return value of the \code{\link{writeLines}} call.

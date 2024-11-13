@@ -10,6 +10,8 @@
 #' @return A \code{{stanedit}} object containing clean model code. This will
 #'   have some formatting applied to it for further processing so line numbers
 #'   may not correspond to the original model, and comments will be removed.
+#' @importFrom methods is
+#' @importFrom utils capture.output
 #' @examples
 #' model_file_name <- system.file(package = "stanedit", "regression.stan")
 #' reg <- stanedit(filename = model_file_name)

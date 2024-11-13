@@ -11,7 +11,9 @@ Description: Provides functionality for extracting particular bits of stan
   models as well as removing and adding lines.
 License: MIT + file LICENSE
 Imports:
-    checkmate
+    checkmate,
+    methods,
+    utils
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
