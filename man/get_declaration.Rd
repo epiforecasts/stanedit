@@ -4,7 +4,7 @@
 \alias{get_declaration}
 \title{Get the declaration of a variable in a stan model}
 \usage{
-get_declaration(x, name, shell = FALSE)
+get_declaration(x, name)
 }
 \arguments{
 \item{x}{a \code{\link{stanedit}} object}

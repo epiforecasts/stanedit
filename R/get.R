@@ -19,8 +19,7 @@ get_vars <- function(x, block) {
   lines <- barebones(lines)
   declarations <- setdiff(
     grep(
-      paste0(
-        "^(array[[:space:]]+)?[a-z]+[[:space:]]+[^[:space:]]+[[:space:]]*$"),
+      "^(array[[:space:]]+)?[a-z]+[[:space:]]+[^[:space:]]+[[:space:]]*$",
       lines
     ),
     union(
@@ -82,7 +81,7 @@ get_block <- function(x, name, shell = FALSE) {
 #' model_file_name <- system.file(package = "stanedit", "regression.stan")
 #' reg <- stanedit(filename = model_file_name)
 #' get_declaration(reg, "alpha")
-get_declaration <- function(x, name, shell = FALSE) {
+get_declaration <- function(x, name) {
   assert_class(x, "stanedit")
   if (missing(name)) {
     stop("The name of the variable must be provided as 'name'")
