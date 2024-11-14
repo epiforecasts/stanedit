@@ -67,10 +67,7 @@ find_declaration <- function(x, name) {
   ## remove leading whitespace
   declaration <- setdiff(
     grep(
-      paste0(
-        "^(array[[:space:]]+)?[a-z]+[[:space:]]+",
-        name,
-        "[[:space:]]*$"),
+      paste0("^(array[[:space:]]+)?[a-z]+[[:space:]]+", name, "[[:space:]]*$"),
       lines
     ),
     union(
