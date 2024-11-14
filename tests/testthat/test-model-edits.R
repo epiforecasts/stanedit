@@ -45,14 +45,8 @@ test_that("lines can be inserted", {
 })
 
 test_that("lines can be removed", {
-  reg2 <- remove_lines(reg, "model", only = "y", type = "sample")
-  reg3 <- remove_lines(
-    reg, "model", only = "y", type = "sample", preserve_shell = TRUE
-  )
-  reg4 <- remove_lines(reg, "model", only = "y", type = "assignment")
-  expect_length(get_block(reg2, "model"), 0)
-  expect_length(get_block(reg3, "model", shell = TRUE), 2)
-  expect_equal(reg4, reg)
+  reg2 <- remove_lines(reg, 2)
+  expect_length(get_block(reg2, "data"), 2)
 })
 
 

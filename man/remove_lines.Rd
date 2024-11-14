@@ -4,30 +4,13 @@
 \alias{remove_lines}
 \title{Remove line(s) and/or block(s) in a libbi model}
 \usage{
-remove_lines(
-  x,
-  what,
-  only,
-  type = c("all", "assignment", "sample"),
-  preserve_shell = FALSE
-)
+remove_lines(x, what)
 }
 \arguments{
 \item{x}{a \code{\link{stanedit}} object}
 
 \item{what}{either a vector of line number(s) to remove, or a vector of
 blocks to remove (e.g., "parameters")}
-
-\item{only}{only remove lines assigning given names (as a vector of character
-strings)}
-
-\item{type}{which types of lines to remove, either "all", "sample" (i.e.,
-lines with a "~") or "assignment" (lines with a "=") (default:
-"all")}
-
-\item{preserve_shell}{if TRUE (default: FALSE), preserve the definition of a
-block even if all lines are removed; this is useful to preserve options
-passed to a \code{transition} or \code{ode} block}
 }
 \value{
 the updated \code{stanedit} object
@@ -38,7 +21,7 @@ Removes one or more lines in a libbi model.
 \examples{
 model_file_name <- system.file(package = "stanedit", "regression.stan")
 reg <- stanedit(filename = model_file_name)
-reg <- remove_lines(reg, "model", only = "y", type = "sample")
+reg <- remove_lines(reg, "model")
 }
 \seealso{
 \code{\link{stanedit}}
