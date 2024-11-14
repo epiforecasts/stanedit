@@ -72,5 +72,7 @@ clean_model <- function(x) {
 
   model <- structure(x, class = "stanedit")
 
-  return(check_model(model))
+  check_model(model)
+
+  return(model)
 }
