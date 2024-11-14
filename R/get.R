@@ -37,7 +37,8 @@ get_vars <- function(x, block) {
 #' @description
 #' Returns the contents of a block in a stan model as a character vector of
 #'   lines.
-#' @return a character vector of the lines in the block
+#' @return a character vector of the lines in the block, or an empty character
+#'   vector if the block is not found
 #' @param x a \code{\link{stanedit}} object
 #' @param name name of the block
 #' @param shell if TRUE (default:FALSE), will return the shell (i.e., the
@@ -61,6 +62,35 @@ get_block <- function(x, name, shell = FALSE) {
       lines <- lines[-c(1, length(lines))]
     }
     return(lines)
+  } else {
+    return(character(0))
+  }
+}
+
+#' @title Get the declaration of a variable in a stan model
+#'
+#' @description
+#' Returns the contents of a block in a stan model as a character vector of
+#'   lines.
+#' @return a character vector of length 1 with the line where the variable is
+#'   declared, or an empty character vector if no declaration is found
+#' @param x a \code{\link{stanedit}} object
+#' @param name name of the variable
+#' @importFrom checkmate assert_class
+#' @export
+#' @examples
+#' model_file_name <- system.file(package = "stanedit", "regression.stan")
+#' reg <- stanedit(filename = model_file_name)
+#' get_declaration(reg, "alpha")
+get_declaration <- function(x, name, shell = FALSE) {
+  assert_class(x, "stanedit")
+  if (missing(name)) {
+    stop("The name of the variable must be provided as 'name'")
+  }
+  declaration <- find_declaration(x, name)
+  if (length(declaration) > 0) {
+    line <- as.character(x[declaration])
+    return(line)
   } else {
     return(character(0))
   }

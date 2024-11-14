@@ -16,7 +16,8 @@ definition of the block) as well as content; this is useful, e.g., to see
 options passed to a \code{transition} or \code{ode} block}
 }
 \value{
-a character vector of the lines in the block
+a character vector of the lines in the block, or an empty character
+vector if the block is not found
 }
 \description{
 Returns the contents of a block in a stan model as a character vector of
