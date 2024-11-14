@@ -61,22 +61,6 @@ insert_lines(reg,
 )
 ```
 
-    ## data {
-    ##   int<lower=0> N;
-    ##   vector[N] x;
-    ##   vector[N] y;
-    ## }
-    ## parameters {
-    ##   real alpha;
-    ##   real beta;
-    ##   real<lower=0> sigma;
-    ## }
-    ## model {
-    ##   y ~ normal(alpha + beta * x, sigma);
-    ##   alpha ~ std_normal();
-    ##   beta ~ std_normal();
-    ## }
-
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
