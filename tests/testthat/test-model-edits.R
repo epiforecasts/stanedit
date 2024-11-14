@@ -54,3 +54,10 @@ test_that("lines can be removed", {
   expect_length(get_block(reg3, "model", shell = TRUE), 2)
   expect_equal(reg4, reg)
 })
+
+
+test_that("lines can be moved", {
+  reg2 <- move(reg, find_declaration(reg, "alpha"), at_end_of = "data")
+  data <- get_block(reg2, "data")
+  expect_equal(get_declaration(reg, "alpha"), data[length(data)])
+})
