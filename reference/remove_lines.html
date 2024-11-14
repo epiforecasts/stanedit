@@ -47,13 +47,7 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">remove_lines</span><span class="op">(</span></span>
-<span>  <span class="va">x</span>,</span>
-<span>  <span class="va">what</span>,</span>
-<span>  <span class="va">only</span>,</span>
-<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"all"</span>, <span class="st">"assignment"</span>, <span class="st">"sample"</span><span class="op">)</span>,</span>
-<span>  preserve_shell <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">remove_lines</span><span class="op">(</span><span class="va">x</span>, <span class="va">what</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -67,23 +61,6 @@
 <dt id="arg-what">what<a class="anchor" aria-label="anchor" href="#arg-what"></a></dt>
 <dd><p>either a vector of line number(s) to remove, or a vector of
 blocks to remove (e.g., "parameters")</p></dd>
-
-
-<dt id="arg-only">only<a class="anchor" aria-label="anchor" href="#arg-only"></a></dt>
-<dd><p>only remove lines assigning given names (as a vector of character
-strings)</p></dd>
-
-
-<dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
-<dd><p>which types of lines to remove, either "all", "sample" (i.e.,
-lines with a "~") or "assignment" (lines with a "=") (default:
-"all")</p></dd>
-
-
-<dt id="arg-preserve-shell">preserve_shell<a class="anchor" aria-label="anchor" href="#arg-preserve-shell"></a></dt>
-<dd><p>if TRUE (default: FALSE), preserve the definition of a
-block even if all lines are removed; this is useful to preserve options
-passed to a <code>transition</code> or <code>ode</code> block</p></dd>
 
 </dl></div>
     <div id="value">
@@ -99,7 +76,7 @@ passed to a <code>transition</code> or <code>ode</code> block</p></dd>
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">model_file_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">"stanedit"</span>, <span class="st">"regression.stan"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">reg</span> <span class="op">&lt;-</span> <span class="fu"><a href="stanedit.html">stanedit</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="va">model_file_name</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">reg</span> <span class="op">&lt;-</span> <span class="fu">remove_lines</span><span class="op">(</span><span class="va">reg</span>, <span class="st">"model"</span>, only <span class="op">=</span> <span class="st">"y"</span>, type <span class="op">=</span> <span class="st">"sample"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">reg</span> <span class="op">&lt;-</span> <span class="fu">remove_lines</span><span class="op">(</span><span class="va">reg</span>, <span class="st">"model"</span><span class="op">)</span></span></span>
 </code></pre></div>
     </div>
   </div>

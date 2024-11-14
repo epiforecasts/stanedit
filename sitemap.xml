@@ -11,13 +11,16 @@
 <url><loc>/reference/Unequals.stanedit.html</loc></url>
 <url><loc>/reference/add_block.html</loc></url>
 <url><loc>/reference/barebones.html</loc></url>
+<url><loc>/reference/check-model.html</loc></url>
 <url><loc>/reference/clean_model.html</loc></url>
 <url><loc>/reference/find_block.html</loc></url>
 <url><loc>/reference/find_declaration.html</loc></url>
 <url><loc>/reference/get_block.html</loc></url>
+<url><loc>/reference/get_declaration.html</loc></url>
 <url><loc>/reference/get_vars.html</loc></url>
 <url><loc>/reference/index.html</loc></url>
 <url><loc>/reference/insert_lines.html</loc></url>
+<url><loc>/reference/move.html</loc></url>
 <url><loc>/reference/print.html</loc></url>
 <url><loc>/reference/remove_contained.html</loc></url>
 <url><loc>/reference/remove_lines.html</loc></url>
