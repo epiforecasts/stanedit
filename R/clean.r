@@ -42,9 +42,8 @@ clean_model <- function(x) {
         x[i] <- sub("/\\*.*$", "", x[i])
         comment <- TRUE
       }
-      if (!grepl("[{};][[:space:]]*$", x[i]) &&
-          !(grepl("#", x[i])) &&
-          i < length(x)) {
+      if (!grepl("[{};][[:space:]]*$", x[i]) && !(grepl("#", x[i])) &&
+            i < length(x)) {
         ## line not finished -- merge lines
         x[i] <- paste(x[i], x[i + 1])
         x <- x[-(i + 1)]
@@ -71,13 +70,7 @@ clean_model <- function(x) {
   ## remove empty lines
   x <- x[x != ""]
 
-  ## check
-  opening_curls <- length(grep("\\{", x))
-  closing_curls <- length(grep("\\}", x))
-  if (opening_curls != closing_curls) {
-    warning("Model contains unbalanced braces.")
-  }
   model <- structure(x, class = "stanedit")
 
-  return(model)
+  return(check_model(model))
 }
