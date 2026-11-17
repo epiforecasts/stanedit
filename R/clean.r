@@ -16,8 +16,8 @@ clean_model <- function(x) {
   ## strip comments starting with //, ignoring any // inside string literals
   x <- sub("\"[^\"]*\"(*SKIP)(*FAIL)|//.*$", "", x, perl = TRUE)
 
-  ## replace string literals with placeholders so that their contents are not
-  ## altered by the comment removal, line merging and reformatting below
+  ## replace string literals with placeholders to protect their contents from
+  ## the comment removal, line merging and reformatting below
   strings <- character(0)
   for (i in seq_along(x)) {
     found <- regmatches(x[i], gregexpr("\"[^\"]*\"", x[i]))[[1]]
