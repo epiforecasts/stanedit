@@ -13,8 +13,20 @@ clean_model <- function(x) {
   assert_character(x)
   x <- as.character(x) ## strip stanedit class
 
-  ## strip comments starting with //
-  x <- sub("//.*$", "", x)
+  ## strip comments starting with //, ignoring any // inside string literals
+  x <- sub("\"[^\"]*\"(*SKIP)(*FAIL)|//.*$", "", x, perl = TRUE)
+
+  ## replace string literals with placeholders so that their contents are not
+  ## altered by the comment removal, line merging and reformatting below
+  strings <- character(0)
+  for (i in seq_along(x)) {
+    found <- regmatches(x[i], gregexpr("\"[^\"]*\"", x[i]))[[1]]
+    for (s in found) {
+      strings <- c(strings, s)
+      x[i] <- sub(s, sprintf("\"@@STRING%d@@\"", length(strings)), x[i],
+                  fixed = TRUE)
+    }
+  }
 
   ## remove long comments and merge lines
   i <- 1
@@ -69,6 +81,11 @@ clean_model <- function(x) {
   x <- gsub("^[[:space:]]*", "", x)
   ## remove empty lines
   x <- x[x != ""]
+
+  ## restore string literals
+  for (k in seq_along(strings)) {
+    x <- sub(sprintf("\"@@STRING%d@@\"", k), strings[k], x, fixed = TRUE)
+  }
 
   model <- structure(x, class = "stanedit")
 
