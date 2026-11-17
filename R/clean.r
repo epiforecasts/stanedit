@@ -91,5 +91,5 @@ clean_model <- function(x) {
 
   check_model(model)
 
-  return(model)
+  model
 }
