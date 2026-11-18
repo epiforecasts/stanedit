@@ -80,7 +80,9 @@ insert_lines(reg,
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 <!-- prettier-ignore-start -->
+
 <!-- markdownlint-disable -->
 
 All contributions to this project are gratefully acknowledged using the
@@ -91,5 +93,7 @@ specification. Contributions of any kind are welcome!
 <a href="https://github.com/epiforecasts/stanedit/commits?author=sbfnk">sbfnk</a>
 
 <!-- markdownlint-enable -->
+
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
