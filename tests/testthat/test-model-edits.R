@@ -55,3 +55,25 @@ test_that("lines can be moved", {
   data <- get_block(reg2, "data")
   expect_equal(get_declaration(reg, "alpha"), data[length(data)])
 })
+
+test_that("clean_model leaves string literals untouched", {
+  model <- structure(
+    c(
+      "model {",
+      "  print(\"a; b {c} // d /* e */  f\");  // trailing comment",
+      "  reject(\"x;\", 1);",
+      "}"
+    ),
+    class = "stanedit"
+  )
+  cleaned <- stanedit:::clean_model(model)
+  expect_equal(
+    as.character(cleaned),
+    c(
+      "model {",
+      "print(\"a; b {c} // d /* e */  f\");",
+      "reject(\"x;\", 1);",
+      "}"
+    )
+  )
+})
